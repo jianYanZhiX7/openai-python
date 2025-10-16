@@ -234,6 +234,8 @@ Realtime API 通过客户端发送事件和服务器发送事件的组合来工�
 
 基本文本示例：
 
+pip install openai[realtime]
+
 ```py
 import asyncio
 from openai import AsyncOpenAI
@@ -294,11 +296,13 @@ async with client.realtime.connect(model="gpt-realtime") as connection:
 
 类型化的请求和响应在您的编辑器中提供自动完成和文档。如果您希望在 VS Code 中更早地看到类型错误以帮助捕获错误，请将 `python.analysis.typeCheckingMode` 设置为 `basic`。
 
-## 分页
+## 获取微调模型
 
-OpenAI API 中的列表方法都是分页的。
 
-此库为每个列表响应提供自动分页迭代器，因此您无需手动请求连续页面：
+
+ 通过 OpenAI API 获取当前账号下所有 fine-tuning（微调训练）任务的列表，并打印出来。 
+
+
 
 ```python
 from openai import OpenAI
